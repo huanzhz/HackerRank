@@ -1,0 +1,50 @@
+#Cheat Sheet Python3
+
+
+
+### LOOP #################################################################
+    for i in range(1, n + 1):
+       print(' ' * (n - i) + '#' * i)
+
+    # enumerate return index list:(0,seq[0]),(1,seq[1]),(2,seq[2])
+    leftDiagonal = 0
+    rightDiagonal = 0
+    for i, row in enumerate(arr):
+        leftDiagonal += row[i]
+        rightDiagonal += row[-i-1]
+
+    difference = leftDiagonal - rightDiagonal
+    return abs(difference)
+    #TypeError: 'int' object is not subscriptable
+
+    numModuleBy5 = 0
+    remainderOfMod5 = 0
+    for i in range(len(grades)):
+        # 40 - 37 = 3 which will not modified hence it fail grade boundry
+        if grades[i] > 37:
+            numModuleBy5 = grades[i] % 5
+            if(numModuleBy5 != 0):
+                remainderOfMod5 = 5 - numModuleBy5
+                if remainderOfMod5 < 3 :
+                    grades[i] += remainderOfMod5
+            
+    return grades
+
+### If #################################################################
+    if value >= s and value <= t:
+            appleWithinRange += 1
+
+### In built function #################################################################
+    return sum(ar)
+    maxVar = max(ar)
+    print ( sum-max(arr), sum-min(arr))
+
+### ARRAY #################################################################
+    lastTwoCharOfString = s[-2:]
+    firstTwoCharOfString = s[:2]
+
+# start from s[2] and remove last 2 char
+    return "00" + s[2:-2]
+
+# s[2:8]-start from s[2] to s[7]
+    return str(int(firstTwoCharOfString) + 12) + s[2:8]
