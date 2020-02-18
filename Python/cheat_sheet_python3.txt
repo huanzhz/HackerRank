@@ -3,13 +3,14 @@
 
 
 ### LOOP #################################################################
-    for i in range(1, n + 1):
+    for i in range(1, n + 1):                           ##############
        print(' ' * (n - i) + '#' * i)
+
 
     # enumerate return index list:(0,seq[0]),(1,seq[1]),(2,seq[2])
     leftDiagonal = 0
     rightDiagonal = 0
-    for i, row in enumerate(arr):
+    for i, row in enumerate(arr):                       ##############
         leftDiagonal += row[i]
         rightDiagonal += row[-i-1]
 
@@ -17,9 +18,10 @@
     return abs(difference)
     #TypeError: 'int' object is not subscriptable
 
+
     numModuleBy5 = 0
     remainderOfMod5 = 0
-    for i in range(len(grades)):
+    for i in range(len(grades)):                        ##############
         # 40 - 37 = 3 which will not modified hence it fail grade boundry
         if grades[i] > 37:
             numModuleBy5 = grades[i] % 5
@@ -29,6 +31,17 @@
                     grades[i] += remainderOfMod5
             
     return grades
+
+
+    for i in range(1, len(scores)):                     ##############
+        if scores[i] > maxScore:
+            maxScore = scores[i]
+            countMax += 1
+        if scores[i] < minScore:
+            minScore = scores[i]
+            countMin += 1
+
+    return [countMax, countMin]                         ############## return as list(a,b)
 
 ### If #################################################################
     if value >= s and value <= t:
@@ -48,3 +61,17 @@
 
 # s[2:8]-start from s[2] to s[7]
     return str(int(firstTwoCharOfString) + 12) + s[2:8]
+
+
+
+### Tuple | Dictionary | List ###########################################################
+https://www.geeksforgeeks.org/g-fact-41-multiple-return-values-in-python/
+
+Using a Dictionary: A Dictionary is similar to hash or map in other languages. 
+
+Using Tuple: A Tuple is a comma separated sequence of items. It is created with or without (). 
+    Tuples are immutable(cannot be edited). See this for details of tuple and list.
+    
+Using a list: A list is like an array of items created using square brackets. 
+    They are different from arrays as they can contain items of different types. 
+    Lists are different from tuples as they are mutable(can be edited).
