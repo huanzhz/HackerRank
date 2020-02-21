@@ -43,6 +43,21 @@
 
     return [countMax, countMin]                         ############## return as list(a,b)
 
+
+    count = 0
+    sumValue = 0
+    for index in range (len(s)):                        ##############
+
+        sumValue = 0
+        if index+m <= len(s):
+            for i in range (m):
+                sumValue += s[index+i]
+                        
+        if sumValue == d:
+            count += 1
+
+    return count
+
 ### If #################################################################
     if value >= s and value <= t:
             appleWithinRange += 1
