@@ -58,18 +58,29 @@
 
     return count
 
+    for i in range (len(bill)):
+        if i == k:
+            continue                                    ##############
+        chargedValue += bill[i]
+
 ### If #################################################################
-    if value >= s and value <= t:
+    if value >= s and value <= t:                       ##############
             appleWithinRange += 1
 
+    if b > chargedValue:
+        overChargedValue = int(b - chargedValue)
+        print (overChargedValue)
+    else:                                               ##############
+        print ("Bon Appetit")
+
 ### In built function #################################################################
-    return sum(ar)
+    return sum(ar)                              
     maxVar = max(ar)
-    print ( sum-max(arr), sum-min(arr))
+    print ( sum-max(arr), sum-min(arr))                    ##############
 
     # sort function
     # sort 2d array first value
-    two_d_list = sorted(two_d_list,key=lambda l:l[0])
+    two_d_list = sorted(two_d_list,key=lambda l:l[0])       ##############
 
 ### ARRAY #################################################################
     lastTwoCharOfString = s[-2:]
