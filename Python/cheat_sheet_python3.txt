@@ -82,6 +82,18 @@
     # sort 2d array first value
     two_d_list = sorted(two_d_list,key=lambda l:l[0])       ##############
 
+    countPair = 0
+    ar.sort()                                               ##############
+    prev = 0, None
+    for curr in ar:
+        if prev == curr:
+            countPair += 1
+            prev = None
+        else:
+            prev = curr
+        
+    return countPair
+
 ### ARRAY #################################################################
     lastTwoCharOfString = s[-2:]
     firstTwoCharOfString = s[:2]
