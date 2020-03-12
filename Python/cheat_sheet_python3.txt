@@ -153,3 +153,5 @@ Using a list: A list is like an array of items created using square brackets.
 ### Return ################################################################################
     # return as string
     return "13.09."+str(year)
+
+    return "Mouse C"                                ###################
