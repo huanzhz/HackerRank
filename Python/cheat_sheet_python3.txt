@@ -155,3 +155,17 @@ Using a list: A list is like an array of items created using square brackets.
     return "13.09."+str(year)
 
     return "Mouse C"                                ###################
+
+### ZIP #####################################################################################
+    for possiblity in all_possible:
+        cost = 0
+        for p_row, s_row in list(zip(possiblity,s)):            ###################
+            #list(zip(possiblity,s)) [casting to list]
+            #[([8, 1, 6], [4, 9, 2]), ([3, 5, 7], [3, 5, 7]), ([4, 9, 2], [8, 1, 5])]
+            for p_num, s_num in (list(zip(p_row, s_row))):      ###################
+                #list(zip(p_row, s_row)) [casting to list]
+                #[(8, 4), (1, 9), (6, 2)]
+                if p_num != s_num:
+                    cost += abs(p_num - s_num)
+        diffs.append(cost)
+    return min(diffs)
