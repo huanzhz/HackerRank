@@ -8,6 +8,13 @@
     #the floor division // rounds the result down to the nearest whole number
 
 ### LOOP #################################################################
+
+    for i in alice:                                     ##############
+        while (n > index and i >= mylist[index]):
+            index += 1
+        result.append(n+1-index) 
+    return result
+
     for i in range(1, n + 1):                           ##############
        print(' ' * (n - i) + '#' * i)
 
@@ -169,3 +176,17 @@ Using a list: A list is like an array of items created using square brackets.
                     cost += abs(p_num - s_num)
         diffs.append(cost)
     return min(diffs)
+
+### SET #####################################################################################
+https://stackoverflow.com/questions/7961363/removing-duplicates-in-lists
+    mylist = sorted(list(set(scores)))                          ###################
+    result =[]
+    index = 0
+    n = len(mylist)
+
+    for i in alice:
+        while (n > index and i >= mylist[index]):
+            index += 1
+        result.append(n+1-index) 
+
+    return result
