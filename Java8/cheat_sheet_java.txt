@@ -1,0 +1,47 @@
+#Cheat Sheet Java
+
+System.out.print("Hello World");
+System.out.print("ARR: " + arr.get(0).get(0));
+
+###Variable naming####################################################  
+int Grade_On_Test
+
+### ARRAY #######################################################################
+    for(int i =0; i<arr.size(); i++){
+        leftDiagonal += arr.get(i).get(i);          ##################
+        rightDiagonal += arr.get(i).get(arr.get(i).size()-i-1); 
+    }
+    difference = leftDiagonal - rightDiagonal;
+
+    return Math.abs(difference);                    ##################
+
+### LOOP ########################################################################  
+    int sum = 0; // initialize sum 
+
+    for (int i = 0; i < ar.length; i++)             ##################
+    sum +=  ar[i]; 
+
+    return sum; 
+
+    https://crunchify.com/how-to-iterate-through-java-list-4-way-to-iterate-through-loop/
+### LIST ########################################################################
+    Java's Integer object wrapper is immutable, so no, you'll have to 
+        create a new object and replace the old one in the ArrayList.
+
+    List<Integer> list = new ArrayList<>();         ##################
+        int alice = 0;
+        int bob = 0;
+
+        for (int i = 0; i < a.size(); i++) {
+            if(a.get(i)>b.get(i)){                  ##################
+                alice++;
+            }else if(a.get(i)<b.get(i)){
+                bob++;
+            }
+        }     
+
+        list.add(alice);                            ##################
+        list.add(bob);
+        return list;
+        
+###################################################################################
