@@ -11,6 +11,7 @@ def countApplesAndOranges(s, t, a, b, apples, oranges):
     appleWithinRange = 0
     orangeWithinRange = 0
     value = 0
+    
     # amount of apple drops
     for appleDropsDistance in apples:
         value = appleDropsDistance + a

@@ -1,47 +1,707 @@
 #Cheat Sheet Java
 
+https://www.geeksforgeeks.org/arrays-in-java/
+
 System.out.print("Hello World");
 System.out.print("ARR: " + arr.get(0).get(0));
+System.out.print(appleWithinRange+"\n"+orangeWithinRange);
+System.out.print("Hello, World."+"\n"+"Hello, Java.");
+System.out.printf("%-15s%03d%n", s1, x);                %-15s %03d %n
+System.out.printf("%d x %d = %d%n", N, i, N*i);         %d %d %d 
+System.out.println();  
 
-###Variable naming####################################################  
-int Grade_On_Test
 
-### ARRAY #######################################################################
-    for(int i =0; i<arr.size(); i++){
-        leftDiagonal += arr.get(i).get(i);          ##################
-        rightDiagonal += arr.get(i).get(arr.get(i).size()-i-1); 
+//// Variable naming //////////////////////////////////////////////////////////////  
+    int Grade_On_Test
+
+    public void printArray(Object[] array) {                    //////////////////
+        for (Object obj : array) {                              //////////////////
+            System.out.println(obj);                            //////////////////
+        }
     }
-    difference = leftDiagonal - rightDiagonal;
 
-    return Math.abs(difference);                    ##################
+    System.out.println(S.substring(start,end));                 //////////////////
 
-### LOOP ########################################################################  
-    int sum = 0; // initialize sum 
+    smallest = largest = s.substring(0, k);
+    if (smallest.compareTo(substr) > 0)                         //////////////////
+        smallest = substr;
 
-    for (int i = 0; i < ar.length; i++)             ##################
-    sum +=  ar[i]; 
+/// Variable Arguments //////////////////////////////////////////////////////////////
 
-    return sum; 
+    static void fun(int ...a)                                   //////////////////
+    { 
+        System.out.println("Number of arguments: " + a.length); 
+  
+        // using for each loop to display contents of a 
+        for (int i: a)                                          //////////////////
+            System.out.print(i + " "); 
+        System.out.println(); 
+    } 
 
-    https://crunchify.com/how-to-iterate-through-java-list-4-way-to-iterate-through-loop/
-### LIST ########################################################################
+    static void fun2(String str, int ...a)                      //////////////////
+    { 
+        System.out.println("String: " + str);                   //////////////////
+        System.out.println("Number of arguments is: "+ a.length); 
+  
+        // using for each loop to display contents of a 
+        for (int i: a)                                          //////////////////
+            System.out.print(i + " "); 
+  
+        System.out.println(); 
+    } 
+
+https://www.geeksforgeeks.org/variable-arguments-varargs-in-java/
+
+/// Covert //////////////////////////////////////////////////////////////
+    // int to string
+    String s = String.valueOf(n);                               //////////////////
+    String s = "" + n;                                          //////////////////
+    String s = Integer.toString(n);                             //////////////////
+
+    String str = sbr.toString();                                //////////////////
+
+/// ARRAY ///////////////////////////////////////////////////////////////////////
+https://www.quora.com/What-is-the-difference-between-an-array-and-an-array-list
+Difference between Array and ArrayList are following:
+1. Implementation of array is simple (**fixed sized**) array but 
+    Implementation of ArrayList is (**dynamic sized**) array.
+2. Array can contain both (**primitives and objects**) but 
+    ArrayList can contain (**only object**) elements
+3. You (**can’t use generics**) along with array but 
+    ArrayList allows us to use generics to ensure type safety.
+4. You can use length variable to calculate (**length**) of an array but 
+    (**size() **)method to calculate size of ArrayList.
+5. Array use assignment operator(**a=b;**) to store elements but 
+    ArrayList use (**add() **)to insert elements.
+
+    /* declaring array */
+    int intArray[];                                 //////////////////
+    /* allocating memory to array */
+    intArray = new int[20];                         //////////////////
+
+    /* combining both statements in one */
+    int[] intArray = new int[20];                   //////////////////
+
+    for(int i = 0; i < apples.length; i++){         //////////////////
+        value = apples[i] + a;
+        if(value >= s && value <= t){
+            appleWithinRange++;
+        }
+    }
+
+    Scanner scan = new Scanner(System.in);
+    int n = scan.nextInt();
+    int[] a = new int[n];                           //////////////////
+
+    int maxSum = Integer.MIN_VALUE;
+    int sum =
+        a[i-2][j-2] + a[i-2][j-1]   + a[i-2][j]
+                    + a[i-1][j-1]   +
+        a[i][j-2]   + a[i][j-1]     + a[i][j];      //////////////////
+    if (sum > maxSum) {maxSum = sum;}
+
+/// LIST // ARRAYLIST //  LINKLIST ///////////////////////////////////////////////////////////////////
     Java's Integer object wrapper is immutable, so no, you'll have to 
         create a new object and replace the old one in the ArrayList.
 
-    List<Integer> list = new ArrayList<>();         ##################
+    List<Integer> list = new ArrayList<>();         //////////////////
         int alice = 0;
         int bob = 0;
 
         for (int i = 0; i < a.size(); i++) {
-            if(a.get(i)>b.get(i)){                  ##################
+            if(a.get(i)>b.get(i)){                  //////////////////
                 alice++;
             }else if(a.get(i)<b.get(i)){
                 bob++;
             }
         }     
 
-        list.add(alice);                            ##################
+        list.add(alice);                            //////////////////
         list.add(bob);
         return list;
+
+//
+    for(int i =0; i<arrlist.size(); i++){
+        leftDiagonal += arrlist.get(i).get(i);          //////////////////
+        rightDiagonal += arrlist.get(i).get(arrlist.get(i).size()-i-1); 
+    }
+    difference = leftDiagonal - rightDiagonal;
+    return Math.abs(difference);                    //////////////////
+
+//
+    ArrayList[] set = new ArrayList[n];
+    try{
+        System.out.println(set[x-1].get(y-1));      //////////////////
+    } catch(Exception e){
+        System.out.println("ERROR!");
+    }
+
+//
+    LinkedList<Integer> list = new LinkedList<>();  //////////////////
+    int Q = scan.nextInt();
+    for (int i = 0; i < Q; i++) {
+        String action = scan.next();
+        if (action.equals("Insert")) {
+            int index = scan.nextInt();
+            int value = scan.nextInt();
+            list.add(index, value);                 //////////////////
+        } else { // "Delete"
+            int index = scan.nextInt();
+            list.remove(index);                     //////////////////
+        }
+    }
+
+/// LOOP ///////////////////////////////////////////////////////////////////////  
+    int sum = 0; // initialize sum 
+
+    for (int i = 0; i < ar.length; i++)             //////////////////
+    sum +=  ar[i]; 
+
+    return sum; 
+
+    https://crunchify.com/how-to-iterate-through-java-list-4-way-to-iterate-through-loop/
         
-###################################################################################
+    String[] items = s.trim().split("[ !,?.\\_'@]+");
+    for(String item: items){                        //////////////////
+        System.out.println(item);
+    }
+
+    int[] arr=new int[n];
+    int res=0;
+    for (int i=0; i<n; i++){
+        arr[i]=sc.nextInt();
+        int s=arr[i];
+
+        if (s<0) {
+            res++;
+        }
+        for (int j=i-1; j>=0; j--){                 //////////////////
+            s+=arr[j];                              //////////////////
+            if (s<0) {
+                res++;
+            }
+        }
+    }
+
+/// Scanner ///////////////////////////////////////////////////////////////////////  
+    Scanner scanner = new Scanner(System.in);       //////////////////
+    String myString = scanner.next();               //////////////////
+    int myInt = scanner.nextInt();                  //////////////////
+    scanner.close();                                //////////////////
+
+    System.out.println("myString is: " + myString);
+    System.out.println("myInt is: " + myInt);
+
+    Scanner sc=new Scanner(System.in);              //////////////////
+    while(sc.hasNextInt()){                         //////////////////
+        int a=sc.nextInt();                         //////////////////
+        System.out.println(a);
+    }
+
+    int i = scan.nextInt();
+    double d = scan.nextDouble();                   
+    scan.nextLine();                                //////////////////
+    String s = scan.nextLine();        // '/n' is queue everyscan
+
+
+    BufferedReader is used instead of Scanner since it's faster.
+                                                    //////////////////
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));   
+    String name = br.readLine();
+    int phone   = Integer.valueOf(br.readLine());
+    map.put(name, phone);
+
+/// Hash|Map|Set //////////////////////////////////////////////////////////////
+HashMap does not allow (**duplicate keys**) however it allows to have duplicate values.
+    HashMap<String, Integer> phonebook = new HashMap<>();       //////////////////
+    phonebook.put(name, phone);                                 //////////////////
+    if(phonebook.containsKey(s)) //if exists                    //////////////////
+        System.out.println(s + "=" + phonebook.get(s));
+
+HashSet does not allow duplicate elements 
+that means you can (**not store duplicate values**) in HashSet.
+    HashSet<String> pairs = new HashSet<String>(t);             //////////////////
+    for(int i = 0; i < t; i++)
+    {
+        pairs.add("(" + pair_left[i] + ", " + pair_right[i] + ")" );        //////////////////
+        System.out.println(pairs.size());        
+    }
+
+HashMap elements: {1->”Hello”, 2->”Hi”, 3->”Bye”, 4->”Run”}
+HashSet elements: {“Hello”, “Hi”, “Bye”, “Run”}
+
+HashMap class implements the (**Map interface**)
+HashSet class implements the (**Set interface**)
+
+https://www.geeksforgeeks.org/hashset-in-java/
+
+    SortedSet<String> sets=new TreeSet<String>();               //////////////////
+    for(int i=0;i<=str.length()-k;i++){
+        sets.add(str.substring(i,i+k));                         //////////////////
+    }
+    System.out.println(sets.first());
+    System.out.println(sets.last());
+
+/// String ///////////////////////////////////////////////////////////////////////
+    Scanner scan = new Scanner(System.in);
+    String s = scan.nextLine();
+    String[] items = s.trim().split("[ !,?.\\_'@]+");           //////////////////
+    if (s == null || s.trim().equals("")) {                     //////////////////
+        System.out.println("0");
+    }
+
+
+    String s1 = new String(STR);
+	String s2 = new String(STR);
+	System.out.println(s1.equals(s2));
+
+    String s1 = "Geeks"; 
+    concat1(s1);  // s1 is not changed 
+    System.out.println("String: " + s1); 
+    // output-> String: Geeks
+
+    If a string is going to remain constant throughout the program, 
+    then use String class object because a String object is immutable.
+
+/// StringBuilder //////////////////////////////////////////////////////////////
+
+    System.out.println( A.equals( new StringBuilder(A).reverse().toString()) ? "Yes" : "No" );
+
+String is immutable in Java - cannot be change after created
+StringBuilder is mutable in Java
+
+    Very fast and consumes less memory than a String while performing concatenations.
+    Cannot use .equals function
+   
+    If a string can change (example: lots of logic and operations in the construction of the string) 
+    and will only be accessed from a single thread, using a StringBuilder is good enough.
+
+https://www.techiedelight.com/difference-between-string-stringbuilder-java/
+https://javarevisited.blogspot.com/2011/07/string-vs-stringbuffer-vs-stringbuilder.html
+
+/// StringBuffer //////////////////////////////////////////////////////////////
+    StringBuilder s2 = new StringBuilder("Geeks"); 
+    concat2(s2); // s2 is changed 
+    System.out.println("StringBuilder: " + s2); 
+    // output-> StringBuilder: Geeksforgeeks
+    
+    StringBuffer s3 = new StringBuffer("Geeks"); 
+    concat3(s3); // s3 is changed 
+    System.out.println("StringBuffer: " + s3); 
+    // output-> StringBuffer: Geeksforgeeks
+
+    multiple threads can use it without any issue. 
+    The thread (**safety brings a penalty of performance**).
+
+    If a string can change, and will be accessed from multiple threads, 
+    use a StringBuffer because StringBuffer is synchronous so you have thread-safety.
+
+https://www.geeksforgeeks.org/string-vs-stringbuilder-vs-stringbuffer-in-java/
+
+
+/// Regex ///////////////////////////////////////////////////////////////////////
+
+    public static final String regularExpression = "^[A-Za-z]\\w{7,29}$";
+
+    Scanner in = new Scanner(System.in);
+    int testCases = Integer.parseInt(in.nextLine());
+    while(testCases>0){
+        String pattern = in.nextLine();
+        //Write your code
+        try {
+            Pattern.compile(pattern);               //////////////////
+            System.out.println("Valid");
+        } catch (PatternSyntaxException e) {
+            System.out.println("Invalid");
+        }
+        testCases--;  
+    }
+
+/// Static ///////////////////////////////////////////////////////////////////////
+ 
+    static{                                         //////////////////
+        Scanner scan = new Scanner(System.in); 
+        B = scan.nextInt(); 
+        scan.nextLine(); 
+        H = scan.nextInt(); 
+        scan.close(); 
+        if(B>0 && H>0){ 
+            flag = true;
+        }else if((B<=0 && H>=0)||(B>=0 && H<=0)){ 
+            flag=false; 
+            System.out.println("java.lang.Exception: Breadth and height must be positive"); 
+        }else{ 
+            flag=false; 
+            System.out.println("java.lang.Exception: Breadth and height must be positive"); 
+        }
+    }
+    public static void main(String[] args){
+		if(flag){                                   //////////////////
+			int area=B*H;
+			System.out.print(area);
+		}
+		
+    }//end of main
+
+/// Stack ///////////////////////////////////////////////////////////////////////
+    Stack<String> stack = new Stack<>();
+    stack.push(stack); 
+    stack.pop(stack); 
+
+/// Comparator ///////////////////////////////////////////////////////////////////////
+
+    public interface Comparator<T> {
+        int compare(T o1, T o2);
+    }
+
+    class Checker implements Comparator<Player>{
+        @Override
+        public int compare(Player a, Player b){        //////////////////
+            if (a.score == b.score){
+                return a.name.compareTo(b.name);//alphabetically
+            } else {
+                return b.score - a.score;//decreasing 
+            }
+        }
+    }
+    Player[] player = new Player[n];
+    Checker checker = new Checker();
+
+    Arrays.sort(player, checker);                       //////////////////
+
+/// OTHERS ///////////////////////////////////////////////////////////////////////
+
+    Scanner sc = new Scanner(System.in);    
+    BigInteger bi1 = new BigInteger(sc.next());         //////////////////
+    BigInteger bi2 = new BigInteger(sc.next());
+
+    BigInteger  bi3, bi4;
+    bi3 = bi1.add(bi2);                                 //////////////////
+    bi4 = bi1.multiply(bi2);                            //////////////////
+    System.out.println( bi3);
+    System.out.println( bi4);
+BigInteger 
+factorial of 100 contains 158 digits
+
+    Scanner in = new Scanner(System.in);
+    BigInteger n = in.nextBigInteger();                 //////////////////
+    in.close();
+    System.out.println(n.isProbablePrime(1) ? "prime" :"not prime");    //////////////////
+    public boolean isProbablePrime(int certainty)
+
+isProbablePrime()    
+Returns true if this BigInteger is probably prime, false if it's definitely composite. 
+If certainty is ≤ 0, true is returned.
+
+//
+
+    k+=b*(int)Math.pow(2,j);                        //////////////////
+
+    if(x >= -Math.pow(2, 15) && x <= Math.pow(2, 15) - 1)   
+        System.out.println("* short");              //////////////////
+    if(x >= -Math.pow(2, 31) && x <= Math.pow(2, 31) - 1)
+        System.out.println("* int");                //////////////////
+    if(x >= -Math.pow(2, 63) && x <= Math.pow(2, 63) - 1)
+        System.out.println("* long");               //////////////////
+
+    public static String findDay(int month, int day, int year) {
+        LocalDate dt = LocalDate.of(year, month, day);      //////////////////
+        String date = ""+dt.getDayOfWeek();
+        return date;
+    }
+//
+
+    import java.text.NumberFormat;
+    import java.util.Locale;
+
+    Locale indiaLocale = new Locale("en", "IN");
+
+    NumberFormat us     = NumberFormat.getCurrencyInstance(Locale.US);
+    NumberFormat india  = NumberFormat.getCurrencyInstance(indiaLocale);
+    NumberFormat china  = NumberFormat.getCurrencyInstance(Locale.CHINA);
+    NumberFormat france = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+
+    
+    System.out.println((A+B).length());                         //////////////////
+    System.out.println(A.compareTo(B) >0 ?"Yes":"No");          //////////////////
+    // hello to Hello
+    A = A.substring(0,1).toUpperCase() + A.substring(1);        //////////////////
+    B = B.substring(0,1).toUpperCase() + B.substring(1);        //////////////////
+    System.out.println(A+ " "+ B);
+//
+
+    // 'B' - 'A' = 1
+    // 'Z' - 'A' = 25
+    if(a.length() != b.length()) return false;
+    int c[] = new int[26], d[] = new int[26] ;
+    a = a.toUpperCase();
+    b = b.toUpperCase();
+    for(int i=0; i<a.length(); i++){
+        c[a.charAt(i) - 'A']++;
+        d[b.charAt(i) - 'A']++;
+    }
+    for(int i =0;i<26; i++)
+        if(c[i] != d[i] ) return false;
+    return true;
+
+//  
+    BitSet
+    BitSet[] bitSets = new BitSet[]{new BitSet(setSize), new BitSet(setSize)};      //////////////////
+    Map<String, BiConsumer<Integer,Integer>> ops = new HashMap<>();
+    ops.put("AND", (index1, index2) -> bitSets[index1-1].and(bitSets[index2-1]));
+    ops.put("OR", (index1, index2) -> bitSets[index1-1].or(bitSets[index2-1]));
+    ops.put("XOR", (index1, index2) -> bitSets[index1-1].xor(bitSets[index2-1]));
+    ops.put("SET", (index1, index2) -> bitSets[index1-1].set(index2));
+    ops.put("FLIP", (index1, index2) -> bitSets[index1-1].flip(index2));
+    for (int i = 0; i < noOps; i++){
+        ops.get(sc.next()).accept(sc.nextInt(), sc.nextInt());    
+        System.out.println(bitSets[0].cardinality() + " " + bitSets[1].cardinality());
+    }
+
+//
+    Method[] methods = student.getDeclaredMethods();
+
+https://www.geeksforgeeks.org/class-getdeclaredmethods-method-in-java-with-examples/
+
+/// Collection ///////////////////////////////////////////////////////////////////////
+    Collections.sort(studentList,  Comparator.comparing(Student :: getCgpa).reversed().
+        thenComparing(Student :: getFname).thenComparing(Student :: getId));
+      
+    Comparator.comparing creates a Comparator, which can be used to sort a collection or stream. 
+    " :: " stands for Method Reference.     d -> d.getCgpa()>10
+    .map(Dish::getCalories)
+    .forEach(System.out::println)
+
+/// Try Catch ///////////////////////////////////////////////////////////////////////
+    try{
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        if(y==0)
+            throw  new ArithmeticException("/ by zero");        //////////////////
+        else
+            System.out.println(x/y);
+    }
+    catch(InputMismatchException e){                            //////////////////
+        System.out.println(e.getClass().getName());
+    }
+    
+    catch(ArithmeticException e){                               //////////////////
+        System.out.println(e);
+    }
+
+    java.lang.ArithmeticException: / by zero
+    java.util.InputMismatchException
+
+//
+    public static int power(int n, int p) throws Exception{     //////////////////
+        if(n < 0 || p < 0){
+            throw new Exception ("n or p should not be negative.");     //////////////////
+        } else if(n==0 && p==0) { 
+            throw new Exception ("n and p should not be zero.");        //////////////////
+        } else {
+            return ((int)Math.pow(n,p));
+        }
+    }
+
+    try {
+        System.out.println(my_calculator.power(n, p));          //////////////////
+    } catch (Exception e) {
+        System.out.println(e);
+    }
+
+/// Inheritance ///////////////////////////////////////////////////////////////////////
+
+    class Bird extends Animal                                   //////////////////
+    {
+        void fly(){System.out.println("I am flying");}
+        void walk(){System.out.println("I am walking");}
+        void sing(){System.out.println("I am singing");}
+    }
+
+    public static void main(String args[]){
+	  Bird bird = new Bird();                                   //////////////////
+	  bird.walk();
+	  bird.fly();
+      bird.sing();
+	}
+
+    class Arithmetic{ static int add(int i,int j){ return i+j; }}
+    class Adder extends Arithmetic {}
+
+    Adder a = new Adder();
+    // Print the name of the superclass on a new line
+    System.out.println("My superclass is: " + a.getClass().getSuperclass().getName());	    //////////////////
+    // Print the result of 3 calls to Adder's `add(int,int)` method as 3 space-separated integers:
+    System.out.print(a.add(10,32) + " " + a.add(10,3) + " " + a.add(10,10) + "\n");
+
+/// Abstract ///////////////////////////////////////////////////////////////////////
+
+    abstract class Book{                                //////////////////
+        String title;
+        abstract void setTitle(String s);
+        String getTitle(){
+            return title;
+        }
+    }
+
+    class MyBook extends Book {
+        @Override
+        void setTitle(String s) {
+            title = s;
+        }
+    }
+
+/// Interface ///////////////////////////////////////////////////////////////////////
+
+    interface AdvancedArithmetic{int divisor_sum(int n);}       //////////////////
+
+    class MyCalculator implements AdvancedArithmetic{
+        public int divisor_sum(int a){
+            int divisor=1;
+            int sum=0;
+            while(divisor<=a){
+                if(a%divisor==0){
+                    sum+=divisor;
+                }
+                divisor++;
+            }
+            return sum;
+        }
+    }
+
+/// Override ///////////////////////////////////////////////////////////////////////
+    class Sports{
+        String getName(){                                   //////////////////
+            return "Generic Sports";                        
+        }
+    }
+
+    class Soccer extends Sports{                            //////////////////
+        @Override
+        String getName(){                                   //////////////////
+            return "Soccer Class";
+        }
+    }
+
+//
+    class BiCycle{
+        String define_me(){                                 //////////////////
+            return "a vehicle with pedals.";
+        }
+    }
+
+    class MotorCycle extends BiCycle{
+        String define_me(){                                 //////////////////
+            return "a cycle with an engine.";
+        }
+        
+        MotorCycle(){
+            System.out.println("Hello I am a motorcycle, I am "+ define_me());
+
+            String temp=super.define_me(); //Fix this line      //////////////////
+
+            System.out.println("My ancestor is a cycle who is "+ temp );
+        }
+    }
+    Hello I am a motorcycle, I am a cycle with an engine.
+    My ancestor is a cycle who is a vehicle with pedals.
+
+/// Instanceof ///////////////////////////////////////////////////////////////////////
+    ArrayList mylist = new ArrayList();
+    for(int i=0; i<t; i++){
+        String s=sc.next();
+        if(s.equals("Student"))mylist.add(new Student());   //////////////////
+        if(s.equals("Rockstar"))mylist.add(new Rockstar());
+        if(s.equals("Hacker"))mylist.add(new Hacker());
+    }
+    for(int i = 0; i < mylist.size(); i++){
+        Object element=mylist.get(i);
+        if(element instanceof Student )                     //////////////////
+            a++;
+        if(element instanceof Rockstar)
+            b++;
+        if(element instanceof Hacker)
+            c++;
+    }
+
+/// Iterator ///////////////////////////////////////////////////////////////////////
+
+Java Iterator class can help you to iterate through every element in a collection.
+    static Iterator func(ArrayList mylist){                 //////////////////
+        Iterator it=mylist.iterator();
+        while(it.hasNext()){
+            Object element = it.next();
+            if(element instanceof String)
+                break;
+            }
+        return it;
+   }
+
+    Iterator it=func(mylist);                               //////////////////
+    while(it.hasNext()){
+        Object element = it.next();
+        System.out.println((String)element);
+    }
+/// Singleton ///////////////////////////////////////////////////////////////////////
+
+    class Singleton {
+        private volatile static Singleton instance;         //////////////////
+        public static String str;
+        private Singleton() {}
+        
+        static Singleton getSingleInstance() {
+            if (instance == null) {
+                synchronized (Singleton.class) {
+                    if (instance == null) {                 //////////////////
+                        instance = new Singleton();         //////////////////
+                    }
+                }
+            }
+            return instance;                                //////////////////
+        }
+    }
+
+    class Singleton {
+        private Singleton() {}
+        public String str;
+        private static Singleton instance = new Singleton();    //////////////////
+        public static Singleton getSingleInstance() { return instance; }    //////////////////
+    }
+
+/// Factory ///////////////////////////////////////////////////////////////////////
+
+    Scanner sc=new Scanner(System.in);
+    //creating the factory
+    FoodFactory foodFactory = new FoodFactory();            //////////////////
+
+    //factory instantiates an object
+    Food food = foodFactory.getFood(sc.nextLine());         //////////////////
+
+    interface Food {public String getType();}
+
+	class Pizza implements Food {
+        public String getType() {
+            return "Someone ordered a Fast Food!";
+        }
+	}
+
+	class Cake implements Food {
+        public String getType() {
+            return "Someone ordered a Dessert!";
+        }
+	}
+
+	class FoodFactory {
+		public Food getFood(String order) {             //////////////////
+            switch (order){
+                case "pizza": return new Pizza();       //////////////////
+                case "cake" : return new Cake();        //////////////////
+                default : return null;                  //////////////////
+            }
+
+        }//End of getFood method
+
+	}//End of factory class
+
+//////////////////////////////////////////////////////////////////////////////////
