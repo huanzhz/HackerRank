@@ -266,6 +266,7 @@ https://www.geeksforgeeks.org/hashset-in-java/
 /// StringBuilder //////////////////////////////////////////////////////////////
 
     System.out.println( A.equals( new StringBuilder(A).reverse().toString()) ? "Yes" : "No" );
+    .append(str);
 
 String is immutable in Java - cannot be change after created
 StringBuilder is mutable in Java
@@ -298,6 +299,70 @@ https://javarevisited.blogspot.com/2011/07/string-vs-stringbuffer-vs-stringbuild
 
 https://www.geeksforgeeks.org/string-vs-stringbuilder-vs-stringbuffer-in-java/
 
+/// Duration ///////////////////////////////////////////////////////////////////////
+    Duration – Measures time in seconds and nanoseconds.
+    Period – Measures time in years, months and days.
+
+    import java.time.Duration;
+
+    Duration zeroHours = Duration.ofHours(0);
+    Duration oneHours = Duration.ofHours(1);        //////////////////
+    System.out.println(oneHours.getSeconds() + " seconds");
+    oneHours = oneHours.plus(oneHours);             //////////////////
+    System.out.println(oneHours.getSeconds() + " seconds");
+//
+    import java.time.LocalDateTime;
+    import java.time.Month;
+
+    LocalDateTime oldDate = LocalDateTime.of(2016, Month.AUGUST, 31, 10, 20, 55);
+    LocalDateTime newDate = LocalDateTime.of(2016, Month.NOVEMBER, 9, 10, 21, 56);
+    Duration duration = Duration.between(oldDate, newDate);     //////////////////
+    System.out.println(duration.getSeconds() + " seconds");     //////////////////
+
+//second to duration
+    Duration oneHours = Duration.ofHours(1);                    //////////////////
+    oneHours = oneHours.plus(oneHours);
+    long seconds = 0;
+    seconds = oneHours.getSeconds() / 4;                        //////////////////
+    oneHours = Duration.ofSeconds(seconds);                     //////////////////
+    System.out.println(oneHours.getSeconds() + " seconds");
+
+/// Period ///////////////////////////////////////////////////////////////////////
+    A java.time.Period example to find out differently (years, months, days) 
+        between two LocalDates.
+
+    import java.time.LocalDate;
+    import java.time.Month;
+    import java.time.Period;
+
+    Period tenDays = Period.ofDays(10);                         //////////////////
+    System.out.println(tenDays.getDays()); //10
+
+    Period oneYearTwoMonthsThreeDays = Period.of(1, 2, 3);      //////////////////
+    System.out.println(oneYearTwoMonthsThreeDays.getYears());   //1
+    System.out.println(oneYearTwoMonthsThreeDays.getMonths());  //2
+    System.out.println(oneYearTwoMonthsThreeDays.getDays());    //3
+
+    LocalDate oldDate = LocalDate.of(1982, Month.AUGUST, 31);
+    LocalDate newDate = LocalDate.of(2016, Month.NOVEMBER, 9);
+    Period period = Period.between(oldDate, newDate);           //////////////////
+    System.out.print(period.getYears() + " years,");            //////////////////
+    System.out.print(period.getMonths() + " months,");          //////////////////
+    System.out.print(period.getDays() + " days");               //////////////////
+
+/// ChronoUnit ///////////////////////////////////////////////////////////////////////
+    LocalDateTime oldDate = LocalDateTime.of(1982, Month.AUGUST, 31, 10, 20, 55);
+    LocalDateTime newDate = LocalDateTime.of(2016, Month.NOVEMBER, 9, 10, 21, 56);
+
+    long years = ChronoUnit.YEARS.between(oldDate, newDate);
+    long months = ChronoUnit.MONTHS.between(oldDate, newDate);
+    long weeks = ChronoUnit.WEEKS.between(oldDate, newDate);
+    long days = ChronoUnit.DAYS.between(oldDate, newDate);
+    long hours = ChronoUnit.HOURS.between(oldDate, newDate);
+    long minutes = ChronoUnit.MINUTES.between(oldDate, newDate);
+    long seconds = ChronoUnit.SECONDS.between(oldDate, newDate);
+    long milis = ChronoUnit.MILLIS.between(oldDate, newDate);
+    long nano = ChronoUnit.NANOS.between(oldDate, newDate);
 
 /// Regex ///////////////////////////////////////////////////////////////////////
 
