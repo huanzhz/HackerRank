@@ -6,8 +6,11 @@ System.out.print("Hello World");
 System.out.print("ARR: " + arr.get(0).get(0));
 System.out.print(appleWithinRange+"\n"+orangeWithinRange);
 System.out.print("Hello, World."+"\n"+"Hello, Java.");
+
 System.out.printf("%-15s%03d%n", s1, x);                %-15s %03d %n
 System.out.printf("%d x %d = %d%n", N, i, N*i);         %d %d %d 
+System.out.printf("%.6f \n",positive/totalcount);
+
 System.out.println();  
 
 
@@ -536,6 +539,28 @@ https://www.geeksforgeeks.org/class-getdeclaredmethods-method-in-java-with-examp
     " :: " stands for Method Reference.     d -> d.getCgpa()>10
     .map(Dish::getCalories)
     .forEach(System.out::println)
+
+/// Lambda ///////////////////////////////////////////////////////////////////////
+    public static PerformOperation isOdd()
+    {
+        return num -> {                                           //////////////////
+            if(num%2==0)
+                return false;
+            else
+                return true;
+        } ;
+    }
+
+
+    public static void main(String args[]) 
+    { 
+        FuncInterface fobj = (int x)->System.out.println(2*x);     //////////////////
+  
+        // This calls above lambda expression and prints 10. 
+        fobj.abstractFun(5); 
+    } 
+
+https://www.geeksforgeeks.org/lambda-expressions-java-8/
 
 /// Try Catch ///////////////////////////////////////////////////////////////////////
     try{
