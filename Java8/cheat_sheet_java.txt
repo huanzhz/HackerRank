@@ -13,6 +13,10 @@ System.out.printf("%.6f \n",positive/totalcount);
 
 System.out.println();  
 
+/// Time Complexity //////////////////////////////////////////////////////////////
+
+
+http://infotechgems.blogspot.com/2011/11/java-collections-performance-time.html
 
 //// Variable naming //////////////////////////////////////////////////////////////  
     int Grade_On_Test
@@ -215,6 +219,9 @@ Difference between Array and ArrayList are following:
     map.put(name, phone);
 
 /// Hash|Map|Set //////////////////////////////////////////////////////////////
+Hash o(1) * n = n 
+TreeMap logn * n = nlong    | O(log n)
+
 HashMap does not allow (**duplicate keys**) however it allows to have duplicate values.
     HashMap<String, Integer> phonebook = new HashMap<>();       //////////////////
     phonebook.put(name, phone);                                 //////////////////
@@ -244,6 +251,9 @@ https://www.geeksforgeeks.org/hashset-in-java/
     }
     System.out.println(sets.first());
     System.out.println(sets.last());
+
+
+https://dzone.com/articles/hashmap-vs-treemap-vs
 
 /// String ///////////////////////////////////////////////////////////////////////
     Scanner scan = new Scanner(System.in);

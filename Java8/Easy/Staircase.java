@@ -1,4 +1,4 @@
-package Java8.Java;
+package Java8.Easy;
 
 import java.io.*;
 import java.math.*;
