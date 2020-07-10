@@ -1,3 +1,8 @@
+
+References:
+https://www.youtube.com/watch?v=0lajFzeFEFo
+
+
 // Complete the hourglassSum function below.
 static int hourglassSum(int[][] arr) {
 	
@@ -26,6 +31,3 @@ static int hourglassSum(int[][] arr) {
 	return max_hourglass_sum;
 
 }
-
-References:
-https://www.youtube.com/watch?v=0lajFzeFEFo
