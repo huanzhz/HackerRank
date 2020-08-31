@@ -15,6 +15,7 @@ static int[] rotLeft(int[] a, int d){
 	int i = 0;
 	int rotate_index = d;
 	
+	// move the ending rotation number to the first position
 	// rotate_index = 4 | size = 5 | i = 0
 	while(rotate_index < size){
 		rotated_arr[i] = a[rotate_index];
@@ -23,6 +24,7 @@ static int[] rotLeft(int[] a, int d){
 	}
 	// rotated_arr[5,0,0,0,0]
 	
+	// add back the remaining numbers, [i] is to keep track of numbers moved with the ending rotation.
 	rotate_index = 0;
 	// rotate_index = 0 | d = 4 | i = 1
 	while(rotate_index < d){

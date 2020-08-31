@@ -12,21 +12,20 @@ static SinglyLinkedListNode insertNodeAtTail(SinglyLinkedListNode head, int data
 	}
 	
 	// get the link list
-	// a->b->c
-	// currently at a
+	// [a]->[b]->[c]
+	// currently at [a]
 	SinglyLinkedListNode current_node = head;
 	// travel through the link list to the last node
-	// after the while loop it will reach c
+	// after the while loop it will reach [c]
 	while(current_node.next != null){
 		current_node = current_node.next;
 	}
 	
-	
-	// c->null
-	// put the node at node
-	// c->d
+	// current location : [c]
+	// put the node [d] at tail where it is currently pointing to null : [c]->null 
+	// [c]->[d]
 	current_node.next = new_node;
-	// a->b->c->d
+	// the full linklist : [a]->[b]->[c]->[d]
 	return head;
 
 }
